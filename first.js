@@ -1,3 +1,3 @@
 const isTestString = (text) => {
-    return text === 'Test';
+    return text === 'test';
 }
