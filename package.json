@@ -1,0 +1,16 @@
+{
+  "name": "trainingproject",
+  "version": "0.0.1",
+  "description": "Training Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "unit-testing"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
