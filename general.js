@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = general = {
   createUserValid: (body) => {
     if (
       body.firstName == null ||
@@ -25,28 +25,26 @@ module.exports = {
   generateUpdateSqlStr: (id, fstName, lstName, bthDate, isAct) => {
     let valuesStr = '';
 
-    valuesStr = addParameterToStr(fstName, 'firstName', valuesStr);
-    valuesStr = addParameterToStr(lstName, 'lastName', valuesStr);
-    valuesStr = addParameterToStr(bthDate, 'birthDate', valuesStr);
+    valuesStr = general.addParameterToStr(fstName, 'firstName', valuesStr);
+    valuesStr = general.addParameterToStr(lstName, 'lastName', valuesStr);
+    valuesStr = general.addParameterToStr(bthDate, 'birthDate', valuesStr);
 
     if (isAct != null && isAct == true) {
-      valuesStr += addComaAtTheEnd(valuesStr);
-      valuesStr += `isActive = '${isAct}', deactivationDateTime = NULL`;
+      valuesStr = general.addComaAtTheEnd(valuesStr);
+      valuesStr += `isActive = '1', deactivationDateTime = NULL`;
     } else if (isAct != null && isAct == false) {
-      valuesStr += addComaAtTheEnd(valuesStr);
-      valuesStr += `isActive = '${isAct}', deactivationDateTime = NOW()`;
+      valuesStr = general.addComaAtTheEnd(valuesStr);
+      valuesStr += `isActive = '0', deactivationDateTime = NOW()`;
     }
-
     const res = `UPDATE users SET ${valuesStr} WHERE userId = ${id}`;
 
     return res;
   },
   addParameterToStr: (param, paramName, str) => {
     if (param != null) {
-      str += addComaAtTheEnd(str);
+      str = general.addComaAtTheEnd(str);
       str += `${paramName} = '${param}'`;
     }
-
     return str;
   },
   addComaAtTheEnd: (str) => {
