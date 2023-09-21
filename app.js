@@ -58,7 +58,7 @@ app.post('/createuser', async (req, res) => {
 
 app.post('/updateuser', async (req, res) => {
   if (general.updateUserValid(req.body)) {
-    const sqlStr = generateUpdateSqlStr(
+    const sqlStr = general.generateUpdateSqlStr(
         req.body.userId,
         req.body.firstName,
         req.body.lastName,
