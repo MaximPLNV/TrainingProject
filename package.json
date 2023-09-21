@@ -5,12 +5,17 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "unit-testing"
+    "test": "unit-testing",
+    "eslint": "npx eslint ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-google": "^0.14.0"
   }
 }
