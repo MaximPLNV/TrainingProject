@@ -36,7 +36,7 @@ app.post('/createuser', async (req, res) => {
     const fstName = req.body.firstName;
     const lstName = req.body.lastName;
     const birthDate = req.body.birthDate;
-    const sqlStr = `INSERT INTO users (firstName, lastName, birthDate) VALUES ('${fstName}', '${lstName}', '${birthDate}')`;
+    const sqlStr = `INSERT INTO users (firstName, lastName, dateOfBirth) VALUES ('${fstName}', '${lstName}', '${birthDate}')`;
 
     pool.query(sqlStr,
         (err, data) => {
