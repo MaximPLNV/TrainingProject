@@ -27,7 +27,7 @@ module.exports = general = {
 
     valuesStr = general.addParameterToStr(fstName, 'firstName', valuesStr);
     valuesStr = general.addParameterToStr(lstName, 'lastName', valuesStr);
-    valuesStr = general.addParameterToStr(bthDate, 'birthDate', valuesStr);
+    valuesStr = general.addParameterToStr(bthDate, 'dateOfBirth', valuesStr);
 
     if (isAct != null && isAct == true) {
       valuesStr = general.addComaAtTheEnd(valuesStr);

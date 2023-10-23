@@ -8,7 +8,7 @@ describe('Testing general logic', () => {
 
   it('Check generateUpdateSqlStr (bad param)', () => {
     const text = general.generateUpdateSqlStr('123', 'fstName', 'lstName', 'bthDate', null);
-    const result = 'UPDATE users SET firstName = \'fstName\', lastName = \'lstName\', birthDate = \'bthDate\' WHERE userId = 123';
+    const result = 'UPDATE users SET firstName = \'fstName\', lastName = \'lstName\', dateOfBirth = \'bthDate\' WHERE userId = 123';
     expect(text).toEqual(result);
   });
 });
